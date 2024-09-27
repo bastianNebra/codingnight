@@ -24,17 +24,17 @@
     "src": "../../../../time-tracking/resources/assets/project-images/Writing room-rafiki.svg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DuGODn35.css",
+    "file": "assets/app-BfcdWa59.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-Ct0rNT96.js",
+    "file": "assets/app-DErKVGsy.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-CPC4bkjk.css"
+      "assets/app-CjLJHezA.css"
     ],
     "assets": [
       "assets/About me-rafiki-Bd6U4-1G.svg",
