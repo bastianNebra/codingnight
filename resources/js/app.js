@@ -1,7 +1,7 @@
 
 
 import { createApp } from 'vue';
-import Home from '/components/home.vue';
+import Home from './components/Home.vue';
 import Welcome from './components/Welcome.vue';
 import About from './components/About.vue';
 import PrimeVue from 'primevue/config';
