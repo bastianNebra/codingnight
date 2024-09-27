@@ -6,7 +6,7 @@
 
                 <!-- Carte de Projet 1 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img src="C:/Users/123ba/time-tracking/resources/assets/project-images/Cross-platform software-rafiki.svg" alt="Projet 1" class="w-60 h-48 ml-10 object-cover">
+                    <img :src=projetImageOne alt="Projet 1" class="w-60 h-48 ml-10 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-4">Reservation Table</h3>
                         <p class="text-gray-700 mb-4">Description du projet 1. Lorem ipsum dolor sit amet, consectetur
@@ -17,7 +17,7 @@
 
                 <!-- Carte de Projet 2 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img src="C:/Users/123ba/time-tracking/resources/assets/project-images/Halloween tickets-bro.svg" alt="Projet 2" class="w-full h-48 object-cover">
+                    <img :src=projetImageTwo alt="Projet 2" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-4">Your Ticket App</h3>
                         <p class="text-gray-700 mb-4">Description du projet 2. Lorem ipsum dolor sit amet, consectetur
@@ -28,7 +28,7 @@
 
                 <!-- Carte de Projet 3 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img src="C:/Users/123ba/time-tracking/resources/assets/project-images/Writing room-rafiki.svg" alt="Projet 3" class="w-full h-48 object-cover">
+                    <img :src=projetImageThree alt="Projet 3" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-4">Pitza To-Go</h3>
                         <p class="text-gray-700 mb-4">Description du projet 3. Lorem ipsum dolor sit amet, consectetur
@@ -39,7 +39,7 @@
 
                 <!-- Carte de Projet 4 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img src="C:/Users/123ba/time-tracking/resources/assets/project-images/Software code testing-rafiki.svg" alt="Projet 3" class="w-full h-48 object-cover">
+                    <img :src=projetImageFour alt="Projet 3" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-4">ToDo App</h3>
                         <p class="text-gray-700 mb-4">Description du projet 3. Lorem ipsum dolor sit amet, consectetur
@@ -53,5 +53,17 @@
     </section>
 
 </template>
-<script scoped>
+
+<script>
+    export default {
+    data() {
+        return {
+        projetImageOne: "resources/assets/project-images/Cross-platform software-rafiki.svg",
+        projetImageTwo: "resources/assets/project-images/Halloween tickets-bro.svg",
+        projetImageThree: "resources/assets/project-images/Writing room-rafiki.svg",
+        projetImageFour: "resources/assets/project-images/Software code testing-rafiki.svg",
+        };
+    }
+    };
 </script>
+
