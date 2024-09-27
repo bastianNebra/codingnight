@@ -3,7 +3,7 @@
         <div class="flex flex-row bg-blue-50">
 
             <div class="basis-1/3">
-                <img src="C:/Users/123ba/time-tracking/resources/assets/About me-rafiki.svg" alt="About Svg Image">
+                <img :src="aboutImage" alt="About Svg ">
             </div>
 
             <div class="basis-1/2 ml-20">
@@ -27,3 +27,14 @@
 </template>
 
 <style scoped></style>
+
+
+<script>
+export default {
+  data() {
+    return {
+      aboutImage: "public/images/About-me-rafiki.svg"
+    };
+  }
+};
+</script>
