@@ -1,0 +1,71 @@
+# Use official PHP 8.3 image with Apache
+FROM php:8.3-apache
+
+# Set working directory
+WORKDIR /www
+
+# Install system dependencies and PHP extensions
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libpq-dev \
+    libonig-dev \
+    locales \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    git \
+    curl \
+    && docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install mbstring exif pcntl bcmath
+
+# Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+&& apt-get install -y nodejs
+
+# Verify Node.js and npm versions (optional)
+RUN node -v \
+    && npm -v
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Enable Apache rewrite module
+RUN a2enmod rewrite
+
+# Copy existing application directory contents
+COPY . /www
+
+# Set correct permissions for the working directory
+RUN chown -R www-data:www-data /www
+RUN chmod -R 755 /www
+
+RUN chown -R www-data:www-data /www/storage/framework/sessions
+RUN chmod -R 755 /www/storage/framework/sessions
+
+
+# Install Composer dependencies
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Install Node.js dependencies and build assets
+RUN npm install
+RUN npm run build
+
+
+# Run artisan commands to optimize Laravel application
+RUN php artisan config:cache
+RUN php artisan route:cache
+RUN php artisan cache:clear
+RUN php artisan config:clear
+RUN php artisan route:clear
+RUN php artisan view:clear
+
+# Expose port 80 for Apache
+EXPOSE 80
+
+# Command to start Apache
+CMD ["apache2-foreground"]

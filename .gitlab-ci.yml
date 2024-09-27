@@ -1,0 +1,47 @@
+variables:
+     IMAGE_NAME: bastiannebra/bastian_portfolio_new
+     IMAGE_TAG: time-tracking-1
+     REGISTRY_USER: bastiannebra
+     REGISTRY_PASSWORD: 123456789
+
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  image: docker:27.1.1
+  services:
+     - docker:27.1.1-dind
+  variables:
+      DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+      - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+  script:
+      - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+      - docker push $IMAGE_NAME:$IMAGE_TAG
+
+
+lint-test-job:
+  stage: test
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - sleep 10
+    - echo "No lint issues found."
+
+deploy-job:
+  stage: deploy
+  image: docker:27.1.1
+  services:
+     - docker:27.1.1-dind
+  variables:
+      DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - chmod 400 $SSH_KEY
+    - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD"
+  script:
+    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY root@164.92.175.53 "
+      docker run -d -p 9004:8000 $IMAGE_NAME:$IMAGE_TAG"
+    - echo "Application successfully deployed."
+  timeout: 2h

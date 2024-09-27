@@ -1,0 +1,51 @@
+{
+  "resources/assets/About me-rafiki.svg": {
+    "file": "assets/About me-rafiki-bef1e6f1.svg",
+    "src": "resources/assets/About me-rafiki.svg"
+  },
+  "resources/assets/bastian-banner.jpg": {
+    "file": "assets/bastian-banner-bf9566ed.jpg",
+    "src": "resources/assets/bastian-banner.jpg"
+  },
+  "resources/assets/project-images/Cross-platform software-rafiki.svg": {
+    "file": "assets/Cross-platform software-rafiki-05e19cee.svg",
+    "src": "resources/assets/project-images/Cross-platform software-rafiki.svg"
+  },
+  "resources/assets/project-images/Halloween tickets-bro.svg": {
+    "file": "assets/Halloween tickets-bro-99f027fd.svg",
+    "src": "resources/assets/project-images/Halloween tickets-bro.svg"
+  },
+  "resources/assets/project-images/Software code testing-rafiki.svg": {
+    "file": "assets/Software code testing-rafiki-f2630534.svg",
+    "src": "resources/assets/project-images/Software code testing-rafiki.svg"
+  },
+  "resources/assets/project-images/Writing room-rafiki.svg": {
+    "file": "assets/Writing room-rafiki-804a0e68.svg",
+    "src": "resources/assets/project-images/Writing room-rafiki.svg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-a9ff18fd.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-cbf38877.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/About me-rafiki-bef1e6f1.svg",
+      "assets/bastian-banner-bf9566ed.jpg",
+      "assets/Cross-platform software-rafiki-05e19cee.svg",
+      "assets/Halloween tickets-bro-99f027fd.svg",
+      "assets/Writing room-rafiki-804a0e68.svg",
+      "assets/Software code testing-rafiki-f2630534.svg"
+    ],
+    "css": [
+      "assets/app-cbf38877.css"
+    ],
+    "file": "assets/app-82fdf527.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
