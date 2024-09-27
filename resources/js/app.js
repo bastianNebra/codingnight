@@ -1,7 +1,7 @@
 
 
 import { createApp } from 'vue';
-import Home from './components/home.vue';
+import Home from '/components/home.vue';
 import Welcome from './components/Welcome.vue';
 import About from './components/About.vue';
 import PrimeVue from 'primevue/config';
@@ -17,11 +17,8 @@ import Button from "primevue/button"
 import FloatLabel from 'primevue/floatlabel';
 import Badge from 'primevue/badge';
 import '../css/app.css';
-
-//My menu
 import Menubar from 'primevue/menubar';
 
-// Importiere die ripple-Direktive
 import Ripple from 'primevue/ripple';
 
 const app = createApp();
@@ -38,21 +35,6 @@ app.use(PrimeVue,{
         }
     }
 });
-
-//With Tailwindcss
-
-/* app.use(PrimeVue, {
-    theme: {
-        preset: Aura,
-        options: {
-            cssLayer: {
-                name: 'primevue',
-                order: 'tailwind-base, primevue, tailwind-utilities'
-            }
-        }
-    }
- }); */
-
 
 app.component("home", Home)
 app.component('Welcome', Welcome)
