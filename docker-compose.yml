@@ -31,10 +31,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: bastian_portfolio_1
+    container_name: php
     ports:
-      - "8001:80"
-      - "443:443"
+      - "8000:80"
+      - "8443:443"
     volumes:
       - .:/var/www/html/
       - ./environments:/etc/apache2/sites-available

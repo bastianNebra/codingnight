@@ -42,6 +42,6 @@ deploy-job:
     - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD"
   script:
     - ssh -o StrictHostKeyChecking=no -i $SSH_KEY root@164.92.175.53 "
-      docker run -d -p 9004:8000 $IMAGE_NAME:$IMAGE_TAG"
+      docker run -d -p 9034:8000 $IMAGE_NAME:$IMAGE_TAG"
     - echo "Application successfully deployed."
   timeout: 2h

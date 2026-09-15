@@ -3,7 +3,7 @@
         <div class="flex flex-row bg-blue-50">
 
             <div class="basis-1/3">
-                <img :src="aboutImage" alt="About Svg ">
+                <img :src=aboutImage alt="About Svg Image">
             </div>
 
             <div class="basis-1/2 ml-20">
@@ -28,12 +28,11 @@
 
 <style scoped></style>
 
-
 <script>
 export default {
   data() {
     return {
-      aboutImage: "public/images/About-me-rafiki.svg"
+      aboutImage: "resources/assets/About me-rafiki.svg"
     };
   }
 };
